@@ -1,0 +1,28 @@
+body {
+    background-image: url(roma.jpg);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    width: 80%;
+}
+.box {
+    position: absolute;
+    left: 15%;
+    top: 20%;
+    background-color: rgba(255, 255, 235, 0.5);
+    width: 20%;
+    border: solid 30px #9b6f6f;
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 3px 3px 3px 3px #aca9a9 inset; 
+}
+
+.box h1 {
+    font-size: 200%;
+    text-align: center;
+
+}
+
+.box p {
+    font-size: 150%;
+    text-align: center;
+}
