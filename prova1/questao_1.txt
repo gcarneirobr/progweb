@@ -1,0 +1,10 @@
+1 - Falta das tags <html></html>
+	- deveria ser inserido nas linhas 2 e na última linha
+2 - <comment> </comment>, linha 4
+	- esse elemento não existe, o comentário correto é <!-- -->
+3 - tag <head> dentro do <body>, linha 3
+	- O certo é após o <html> e antes do início do <body>
+4 - Na tag <style>, linhas 09 a 13
+	- o seletor está no lugar da propriedade e vice-versa
+	- o certo seria p#para { width:400px;}
+
