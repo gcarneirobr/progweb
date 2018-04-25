@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Esfera</title>
+    <style>
+        label {
+        
+            
+        }
+        .formulario {
+            width:30%;
+        }
+        .botaoSubmit {
+            width: 20%;
+            float:left;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="formulario">
+        <label for="raio">   
+            Raio da esfera
+        </label>
+        <input type="text" id="raio" name="raio" />
+        <br />
+        <label for="area">
+            Área
+        </label>
+        <input type="text" id="area" name="area"/>
+        <br />
+        <label for="volume">
+            Volume
+        </label>
+        <input type="text" id="volume" name="volume" />
+    </div>
+    <div class="botaoSubmit">
+        <input type="button" onclick="calculaEsfera()" value="Calcular!" />
+    </div>
+
+    <script> 
+        function calculaEsfera() {
+           var raio = document.getElementById("raio").value;
+           var pi = 3.14159;
+           var volume = (4.0 /3.0)*pi*(Math.pow(raio, 3));
+           var area = 4*pi*(Math.pow(raio,2));
+
+           document.getElementById("area").value = area;
+           document.getElementById("volume").value = volume;
+        }
+    </script>
+</body>
+
+</html>
