@@ -1,0 +1,16 @@
+Hoisting se refere a propriedade do JavaScript de declaração de variáveis e funções em qualquer parte do código/função a qual ela está inserida.
+
+Uma variável pode ser usada antes da declaração no seu código. Isso interfere no entendimento do código, principalmente para programadores inexperientes, uma vez que seguindo a sequência do código as vezes pode não se entender como uma varíavel está sendo usada.
+
+Ex:
+
+(function() {
+	console.log(a);
+	teste();
+	
+	var a = 1;
+	var teste = function() {
+		console.log("passou por aqui");
+	};
+
+})();
