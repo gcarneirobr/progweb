@@ -1,0 +1,52 @@
+relatorio de commits abaixo
+
+
+commit 4440c5edb079d2d45ab976cd2bf321dd0b6a5978
+Author: Guilherme Carneiro <guilhermeb.carneiro@gmail.com>
+Date:   Wed Apr 25 17:23:29 2018 -0400
+
+    questao 2 versão final
+
+commit e03aad5cf5fc616f36542864dcb1a0cbb2cc6d72
+Author: Guilherme Carneiro <guilhermeb.carneiro@gmail.com>
+Date:   Wed Apr 25 17:05:11 2018 -0400
+
+    commit da questao 4
+
+commit 33a6ff28dd3a685ee54338f5b5383a331294dd40
+Author: Guilherme Carneiro <guilhermeb.carneiro@gmail.com>
+Date:   Wed Apr 25 16:58:53 2018 -0400
+
+    commit inicial questao 2
+
+commit d0e9ef5e9a53878f9175b02f0ede3fabb8535588
+Author: Guilherme Carneiro <guilhermeb.carneiro@gmail.com>
+Date:   Wed Apr 25 16:58:18 2018 -0400
+
+    commit da questao 3
+
+commit 6249387c88b4ce6a6164d0e0f388017dd4ef133f
+Author: Guilherme Carneiro <guilhermeb.carneiro@gmail.com>
+Date:   Wed Apr 25 16:12:50 2018 -0400
+
+    commit da questao 1
+
+commit 274d0cd66105d3565b56b802a7926cfefb35cd97
+Author: Guilherme Carneiro <guilhermeb.carneiro@gmail.com>
+Date:   Thu Mar 29 00:04:27 2018 -0400
+
+    exercício 2 css
+
+commit 915db4eb16506493aa6f960554af7efffcc5977a
+Author: Guilherme Carneiro <guilhermeb.carneiro@gmail.com>
+Date:   Mon Mar 26 16:43:41 2018 -0400
+
+    first commit
+
+
+--------------------------------------------------------------------------
+
+a) git status serve para identificar em que estado está o working directory, se está como o HEAD ou se tem alterações a serem commitadas
+b) .gitignore serve para deixar arquivos de fora do monitoramento do git. arquivos adicionados no .gitignore não irão ser listados como new no comando git status
+
+
