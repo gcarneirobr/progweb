@@ -12,6 +12,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use \DateTime;
 
 /**
  * Site controller
@@ -140,7 +141,8 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
-        return $this->render('about');
+        $data = date(DateTime::RFC2822);
+        return $this->render('about', ['data' => $data]);
     }
 
     /**
