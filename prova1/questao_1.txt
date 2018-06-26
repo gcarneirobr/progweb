@@ -1,3 +1,6 @@
+Todos os erros foram identificados corretamente.
+Nota: 2.0
+
 1 - Falta das tags <html></html>
 	- deveria ser inserido nas linhas 2 e na última linha
 2 - <comment> </comment>, linha 4
