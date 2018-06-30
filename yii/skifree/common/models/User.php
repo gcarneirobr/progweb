@@ -40,10 +40,12 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function behaviors()
     {
-        return [
+        return [    
             TimestampBehavior::className(),
         ];
     }
+
+
 
     /**
      * {@inheritdoc}
@@ -51,10 +53,31 @@ class User extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
+            [['username', 'email', 'id_curso'], 'required', 'message' => 'Este campo é obrigatório'],
+            [['username'], 'string', 'max' =>'255'],
+            [['email'], 'email', 'message' => 'Não é um e-mail válido'],
+            [['id_curso'], 'integer'],
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
         ];
     }
+
+
+    /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'username' => 'Usuário',
+            'email' => 'E-mail',
+            'id_curso' => 'Curso',
+            'descricao' => 'Descricao', 
+            'created_at' => 'Criado em',
+            'update_at' => 'Atualizado em'
+        ];
+    }
+
 
     /**
      * {@inheritdoc}

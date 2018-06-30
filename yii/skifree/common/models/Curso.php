@@ -30,12 +30,11 @@ class Curso extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id'], 'required'],
-            [['id'], 'integer'],
+            [['descricao', 'sigla', 'nome'], 'required', 'message' => 'Este campo é obrigatório'],
             [['descricao'], 'string'],
-            [['sigla'], 'string', 'max' => 4],
-            [['nome'], 'string', 'max' => 45],
-            [['id'], 'unique'],
+            [['sigla'], 'string', 'max' => 4, 'message' => 'A sigla deve ter apenas 4 caracteres'],
+            [['nome'], 'string', 'max' => 45, 'message' => 'O nome deve ter no máximo 45 caracteres']
+
         ];
     }
 
@@ -46,9 +45,9 @@ class Curso extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'sigla' => 'Sigla',
-            'descricao' => 'Descricao',
             'nome' => 'Nome',
+            'sigla' => 'Sigla',
+            'descricao' => 'Descrição', 
         ];
     }
 
