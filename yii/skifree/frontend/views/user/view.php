@@ -30,14 +30,17 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'username',
-            'auth_key',
-            'password_hash',
-            'password_reset_token',
+            //'auth_key',
+            //'password_hash',
+            //'password_reset_token',
             'email:email',
-            'status',
+            //'status',
             'created_at',
-            'updated_at',
-            'id_curso',
+            //'updated_at',
+            [
+               'attribute' => 'id_curso',
+               'value' => $model->curso->nome
+            ]
         ],
     ]) ?>
 
