@@ -5,6 +5,7 @@ namespace frontend\controllers;
 use Yii;
 use common\models\User;
 use common\models\UserSearch;
+use common\models\Curso;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -66,12 +67,15 @@ class UserController extends Controller
     {
         $model = new User();
 
+        $arrayCursos = Curso::find()->select(['id', 'nome'])->all();
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('create', [
             'model' => $model,
+            'arrayCursos' => $arrayCursos
         ]);
     }
 
@@ -86,12 +90,15 @@ class UserController extends Controller
     {
         $model = $this->findModel($id);
 
+        $arrayCursos = Curso::find()->select(['id', 'nome'])->all();
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('update', [
             'model' => $model,
+            'arrayCursos' => $arrayCursos
         ]);
     }
 
