@@ -42,7 +42,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'id_curso',
                 'value' => $model->curso->nome, 
             ],
-            'created_at'
+            [
+                'attribute' => 'created_at', 
+                'format' => ['date', 'php: d/m/Y H:i:s']
+            ],
         ],
     ]) ?>
 

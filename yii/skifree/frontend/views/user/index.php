@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+//use \DateTime;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\UserSearch */
@@ -13,8 +14,10 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="user-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
+    <?php // echo $this->render('_search', ['model' => $searchModel]);
+            //$dateNow = new DateTime('NOW');
+            //var_dump($dateNow);
+        ?>
     <p>
         <?= Html::a('Criar Usuário', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
@@ -32,7 +35,10 @@ $this->params['breadcrumbs'][] = $this->title;
             //'password_reset_token',
             'email:email',
             //'status',
-            'created_at',
+            [
+                'attribute' => 'created_at', 
+                'format' => ['date', 'php: d/m/Y H:i:s']
+            ],
             //'updated_at',
             //'id_curso',
              [

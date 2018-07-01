@@ -224,6 +224,6 @@ class User extends ActiveRecord implements IdentityInterface
         $this->username = ucfirst(strtolower($this->username));
         $dateTime = new DateTime();
         $dateTime->setTimestamp($this->created_at);
-        $this->created_at = date_format($dateTime, "d/m/y h:m:s");
+      //  $this->created_at = date_format($dateTime, "d/m/y h:m:s");
     }
 }
