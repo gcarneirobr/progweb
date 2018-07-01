@@ -27,6 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= DetailView::widget([
         'model' => $model,
+        'template' => '<tr><th class="text-right" {captionOptions}>{label}</th><td{contentOptions}>{value}</td></tr>',
         'attributes' => [
             //'id',
             'username',
@@ -36,9 +37,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'email:email',
             //'status',
                  //'updated_at',
+
             [
-            'attribute' => 'id_curso',
-            'value' => $model->curso->nome
+                'attribute' => 'id_curso',
+                'value' => $model->curso->nome, 
             ],
             'created_at'
         ],
