@@ -17,6 +17,4 @@ $this->title = 'Instituto de Computação (IComp)';
         <p> <?= Html::a('Iniciar Jogo', ['jogo/index'], ['class' => 'btn btn-lg btn-success']) ?></p>
     </div>
 
-
-    </div>
 </div>

@@ -6,6 +6,7 @@ use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
+use DateTime;
 
 /**
  * User model
@@ -217,5 +218,12 @@ class User extends ActiveRecord implements IdentityInterface
     public function getCurso()
     {
         return $this->hasOne(Curso::className(), ['id' => 'id_curso']);
+    }
+
+    public function afterFind() {
+        $this->username = ucfirst(strtolower($this->username));
+        $dateTime = new DateTime();
+        $dateTime->setTimestamp($this->created_at);
+        $this->created_at = date_format($dateTime, "d/m/y h:m:s");
     }
 }
