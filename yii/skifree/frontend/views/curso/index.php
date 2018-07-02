@@ -19,9 +19,11 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Criar Curso', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
+
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
@@ -30,7 +32,19 @@ $this->params['breadcrumbs'][] = $this->title;
             'descricao:ntext',
             'nome',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'template' => '{view} {update} {delete} {users}',
+                'buttons' => [
+                                'create', 
+                                'delete', 
+                                'update', 
+                                'users' => function ($url, $model) {
+                                    return Html::a('<span class="glyphicon glyphicon-user"></span>', $url, [
+                                                'title' => 'Usuários',
+                                    ]);
+                                }]
+            ],
         ],
     ]); ?>
 </div>
