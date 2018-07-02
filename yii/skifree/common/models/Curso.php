@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use common\models\User;
 
 /**
  * This is the model class for table "curso".
@@ -11,7 +12,7 @@ use Yii;
  * @property string $sigla
  * @property string $descricao
  * @property string $nome
- *
+ * 
  * @property User[] $users
  */
 class Curso extends \yii\db\ActiveRecord
@@ -48,6 +49,7 @@ class Curso extends \yii\db\ActiveRecord
             'nome' => 'Nome',
             'sigla' => 'Sigla',
             'descricao' => 'Descrição', 
+            'numeroAlunos' => 'Número de alunos'
         ];
     }
 
@@ -58,4 +60,9 @@ class Curso extends \yii\db\ActiveRecord
     {
         return $this->hasMany(User::className(), ['id_curso' => 'id']);
     }
+
+    public function getNumeroAlunos() {
+        return User::find()->where(['id_curso' => $this->id])->count();
+    }
+
 }
