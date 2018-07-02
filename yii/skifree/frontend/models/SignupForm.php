@@ -12,6 +12,7 @@ class SignupForm extends Model
     public $username;
     public $email;
     public $password;
+    public $id_curso;
 
 
     /**
@@ -33,6 +34,18 @@ class SignupForm extends Model
 
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
+            ['id_curso', 'required'],
+        ];
+    }
+
+    public function attributeLabels()
+    {
+        return [
+            'username' => 'Usuário',
+            'email' => 'E-mail',
+            'id_curso' => 'Curso',
+            'created_at' => 'Criado em',
+            'update_at' => 'Atualizado em'
         ];
     }
 
@@ -50,9 +63,18 @@ class SignupForm extends Model
         $user = new User();
         $user->username = $this->username;
         $user->email = $this->email;
+        $user->status = User::STATUS_ACTIVE;
+        $user->created_at = $user->updated_at = time();
         $user->setPassword($this->password);
+        $user->id_curso = $this->id_curso;
         $user->generateAuthKey();
         
-        return $user->save() ? $user : null;
+        var_dump($user);
+
+        $resultUserSave = $user->save(false);
+
+        var_dump($resultUserSave);
+
+        return $resultUserSave ? $user : null;
     }
 }
