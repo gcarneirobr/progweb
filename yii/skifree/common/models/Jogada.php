@@ -46,8 +46,8 @@ class Jogada extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'pontuacao' => 'Pontuacao',
-            'id_user' => 'Id User',
-            'data_hora' => 'Data Hora',
+            'id_user' => 'Usuário',
+            'data_hora' => 'Data/Hora',
         ];
     }
 
