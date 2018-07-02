@@ -30,10 +30,9 @@ class Jogada extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'pontuacao', 'id_user', 'data_hora'], 'required'],
-            [['id', 'pontuacao', 'id_user'], 'integer'],
+            [['pontuacao', 'id_user', 'data_hora'], 'required'],
+            [['pontuacao', 'id_user'], 'integer'],
             [['data_hora'], 'string', 'max' => 45],
-            [['id'], 'unique'],
             [['id_user'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_user' => 'id']],
         ];
     }

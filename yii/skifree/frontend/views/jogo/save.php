@@ -1,9 +1,19 @@
 <?php
+use yii\helpers\Html;
 /* @var $this yii\web\View */
-?>
-<h1>jogo/save</h1>
 
-<p>
-    You may change the content of this page by modifying
-    the file <code><?= __FILE__; ?></code>.
-</p>
+$this->title = 'Instituto de Computação (IComp)';
+?>
+<div class="site-index">
+
+    <div class="jumbotron">
+        <?= Html::img('@web/img/icomp.png',['width'=>'400']) ?>
+  
+        <p class="lead">Sua pontuação foi <?= $pontuacao ?>.</p>
+        
+      <p> <?= Html::a('Novo Jogo', ['jogo/index'], ['class' => 'btn btn-lg btn-success']) ?></p>
+        <p> <?= Html::a('Ranking', ['jogo/ranking'], ['class' => 'btn btn-lg btn-success']) ?></p>
+
+    </div>
+
+</div>
