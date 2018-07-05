@@ -28,7 +28,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'pontuacao',
             [
                 'attribute' => 'data_hora',
-                'format' => ['date', 'php: d/m/Y H:i:s']
             ]
 
             //['class' => 'yii\grid\ActionColumn'],
